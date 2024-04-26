@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="header">
+            <h4 id="hello">Rohil || To-Do</h4>
+        </div>
+        <!-- <h4 id="theme">Dark</h4> -->
+        <div id="lognsearch">
+            <input type="text" id="search" placeholder="Search here" oninput="filterTodo()"> 
+        </div>
+         
+    </header><br>
+    <div id="border">
+        <div id="input">
+            <input id='title' type='text' placeholder="Title"><br>
+            <textarea id='desc'placeholder="Enter a description"></textarea>
+            <button id="btn">Add</button>
+        </div>
+    </div>
+    <div id="updateForm" style="display: none;">
+        <form id="form">
+            <div id="border">
+                <div id="input">
+                    <input id='updateTitle' type='text' placeholder="Title"><br>
+                    <textarea id='updateDesc' placeholder="Enter a description"></textarea>
+                    <button id="updateButton">Update</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="show"></div>
+    <script src="../JS/index.js"></script>
+</body>
+</html>

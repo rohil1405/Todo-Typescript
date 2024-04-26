@@ -1,0 +1,176 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0%;
+    background-image: url('home.png');
+}
+
+body {
+    background-image: url('../todo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    display: flex;
+    background-color: #374042;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+#content {
+    margin-top: 10px;
+}
+
+#header {
+    display: flex;
+    gap: 1.5rem;
+}
+
+#lognsearch {
+    display: flex;
+    font-size: 30px;
+    margin-right: 20px;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer
+}
+
+#input {
+    width: 200px;
+    margin: 0 auto;
+}
+
+#title,
+#desc,
+#updateTitle,
+#updateDesc {
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 16px;
+    margin: 5px;
+}
+
+#btn,
+#edit,
+#updateButton {
+    font-size: 15px;
+    padding: 6px;
+    text-align: center;
+    background-color: #CFC89B;
+    border-radius: 10px;
+    margin-left: 75px;
+    margin-top: 10px;
+}
+
+#border {
+    border: 2px solid black;
+    padding: 12px;
+    width: 250px;
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: #374042;
+}
+
+#search {
+    border-radius: 7px;
+    font-size: 16px;
+    width: 180px;
+    margin-right: 50px;
+    padding: 6px;
+}
+
+#theme {
+    cursor: pointer;
+}
+
+#box {
+    width: 200PX;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #374042;
+    border: 1.3px solid black;
+    /* transition: padding 300ms; */
+    cursor: pointer;
+    overflow: hidden;
+    color: #CFC89B;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.195), inset 5px 5px 10px rgb(177, 177, 177);
+}
+
+#delete {
+    color: rgb(251, 67, 67);
+    transition: 0.7s;
+}
+
+#update {
+    color: green;
+    font-size: 24px;
+    margin-left: 150px;
+    transition: 0.7s;
+}
+
+#delete:hover,
+#update:hover {
+    transform: translateY(-5px) rotate(360deg);
+}
+
+#show {
+    display: flex;
+    width: 90%;
+    margin: 10px 0px;
+    margin-left: 200px;
+    flex-wrap: wrap;
+    position: relative;
+    right: 100px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button i {
+    margin: 0;
+}
+
+#circle {
+    height: 40px;
+    width: 30px;
+    background-color: #CFC89B;
+    border-radius: 20%;
+    margin-bottom: -70px;
+    margin-left: -35px;
+    padding: 0px;
+    display: inline-block;
+    position: relative;
+}
+
+#complete {
+    display: flex;
+    gap: 170px;
+}
+
+#box:hover {
+    transition: 0.1s;
+    transform: translateY(-10px)
+}
+
+#checkbox {
+    margin-left: 180px;
+}
+
+#center {
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    font-size: 15px;
+    overflow: auto;
+    scrollbar-width: none;
+    height: 20px;
+    margin-bottom: 2px;
+}
