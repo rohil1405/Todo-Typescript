@@ -2,13 +2,11 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0%;
-    background-image: url('home.png');
 }
 
 body {
     background-image: url('../todo.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
 }
 
 header {
@@ -88,7 +86,7 @@ header {
 }
 
 #box {
-    width: 200PX;
+    width: 200px;
     margin: 20px;
     padding: 20px;
     border-radius: 8px;

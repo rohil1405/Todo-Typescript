@@ -4,7 +4,6 @@ var border = document.getElementById('border');
 var hello = document.getElementById('hello');
 var two = document.getElementById('desc');
 var one = document.getElementById('title');
-var out = document.getElementById('logout');
 var search = document.getElementById('search');
 var checkbox = document.getElementById('checkbox');
 var pending = document.getElementById('pending');
@@ -87,11 +86,7 @@ function filterTodo() {
     });
     print(filteredData);
 }
-out.addEventListener('click', function () {
-    alert('Are you sure!!');
-    sessionStorage.removeItem('login');
-    location.href = '../HTML/login.html';
-});
+
 function check(index) {
     alert('Please check again!!');
     userData[index].completed = !userData[index].completed;
