@@ -34,25 +34,27 @@ btn.addEventListener('click', function () {
     let title = one.value;
     let desc = two.value;
 
-    if(title.length == 0 && desc.length == 0) {
-        alert('Please Enter a Task')
+    if (title.length === 0) {
+        alert('Please Enter a Todo Title')
+    } else if (desc.length === 0) {
+        alert('Please Enter a Details')
     } else {
 
-    let obj: uData = {
-        title: title,
-        desc: desc,
-        completed: false,
-        color: random()
-    };
+        let obj: uData = {
+            title: title,
+            desc: desc,
+            completed: false,
+            color: random()
+        };
 
-    userData.push(obj);
-    localStorage.setItem('store', JSON.stringify(userData));
-    one.value = '';
-    two.value = '';
-    two.style.display = 'none';
-    alert('Todo added Successfully');
-    print(userData);
-}
+        userData.push(obj);
+        localStorage.setItem('store', JSON.stringify(userData));
+        one.value = '';
+        two.value = '';
+        two.style.display = 'none';
+        alert('Todo added Successfully');
+        print(userData);
+    }
 });
 
 function print(store: uData[]) {

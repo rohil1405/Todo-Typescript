@@ -23,8 +23,11 @@ print(userData);
 btn.addEventListener('click', function () {
     let title = one.value;
     let desc = two.value;
-    if (title.length == 0 && desc.length == 0) {
-        alert('Please Enter a Task');
+    if (title.length === 0) {
+        alert('Please Enter a Todo Title');
+    }
+    else if (desc.length === 0) {
+        alert('Please Enter a Details');
     }
     else {
         let obj = {
