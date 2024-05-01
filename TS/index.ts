@@ -31,8 +31,8 @@ let userData: uData[] = JSON.parse(localStorage.getItem('store') || '[]');
 print(userData);
 
 btn.addEventListener('click', function () {
-    let title = one.value;
-    let desc = two.value;
+    let title = one.value.trim();
+    let desc = two.value.trim();
 
     if (title.length === 0) {
         alert('Please Enter a Todo Title')
