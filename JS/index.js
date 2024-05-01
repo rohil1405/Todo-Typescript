@@ -1,58 +1,84 @@
-var btn = document.getElementById('btn');
-var header = document.getElementById('header');
-var border = document.getElementById('border');
-var hello = document.getElementById('hello');
-var two = document.getElementById('desc');
-var one = document.getElementById('title');
-var search = document.getElementById('search');
-var checkbox = document.getElementById('checkbox');
-var pending = document.getElementById('pending');
-var showe = document.getElementById('show');
-var addForm = document.getElementById('border');
-var updateForm = document.getElementById('updateForm');
-var updateOne = document.getElementById('updateTitle');
-var updateTwo = document.getElementById('updateDesc');
+"use strict";
+let btn = document.getElementById('btn');
+let header = document.getElementById('header');
+let border = document.getElementById('border');
+let hello = document.getElementById('hello');
+let two = document.getElementById('desc');
+let one = document.getElementById('title');
+let search = document.getElementById('search');
+let checkbox = document.getElementById('checkbox');
+let pending = document.getElementById('pending');
+const showe = document.getElementById('show');
+const addForm = document.getElementById('border');
+const updateForm = document.getElementById('updateForm');
+const updateOne = document.getElementById('updateTitle');
+const updateTwo = document.getElementById('updateDesc');
 updateForm.style.display = 'none';
 two.style.display = 'none';
 one.addEventListener('input', function () {
     two.style.display = 'block';
 });
-var userData = JSON.parse(localStorage.getItem('store') || '[]');
+let userData = JSON.parse(localStorage.getItem('store') || '[]');
 print(userData);
 btn.addEventListener('click', function () {
-    var title = one.value;
-    var desc = two.value;
-    var obj = {
-        title: title,
-        desc: desc,
-        completed: false,
-        color: random()
-    };
-    userData.push(obj);
-    localStorage.setItem('store', JSON.stringify(userData));
-    one.value = '';
-    two.value = '';
-    two.style.display = 'none';
-    alert('Todo added Successfully');
-    print(userData);
+    let title = one.value;
+    let desc = two.value;
+    if (title.length == 0 && desc.length == 0) {
+        alert('Please Enter a Task');
+    }
+    else {
+        let obj = {
+            title: title,
+            desc: desc,
+            completed: false,
+            color: random()
+        };
+        userData.push(obj);
+        localStorage.setItem('store', JSON.stringify(userData));
+        one.value = '';
+        two.value = '';
+        two.style.display = 'none';
+        alert('Todo added Successfully');
+        print(userData);
+    }
 });
 function print(store) {
     showe.innerHTML = '';
-    store.forEach(function (task, index) {
-        var item = document.createElement('div');
+    store.forEach((task, index) => {
+        const item = document.createElement('div');
         item.className = 'task';
-        item.innerHTML = "\n        <div id=\"box\">\n            <div id='complete'>\n                <div>\n                    <input type='checkbox' id='checkbox".concat(index, "' onclick='check(").concat(index, ")' ").concat(task.completed ? 'checked' : '', " ").concat(task.completed ? 'style="display: none"' : '', ">\n                </div>\n                <div>\n                    <p id='pending' style=\"").concat(task.completed ? 'color: green;' : 'color:rgb(240, 129, 129);', "\">\n                        ").concat(task.completed ? "<i style=\"font-size:20px\" class=\"fa\">&#xf00c;</i>" : "<i style=\"font-size:24px\" class=\"fa\">&#xf017;</i>", "\n                    </p>\n                </div>\n                </div>\n                <p id='center' ").concat(task.completed ? 'style="text-decoration: line-through;"' : '', "><strong>").concat(task.title, "</strong></p>\n                <hr>\n                <p id='content'>").concat(task.desc, "</p> \n                <div id='circle' style=\"background-color: ").concat(task.color, ";\"></div> \n                <div class=\"button\">   \n                <i class=\"fa\" id='update' onclick='edit(").concat(index, ")' ").concat(task.completed ? 'style="display: none;"' : '', ">&#xf044;</i>\n                <i class=\"material-icons\" id='delete' onclick='remove(").concat(index, ")' ").concat(task.completed ? 'style="margin-left: 180px;"' : '', ">&#xe872;</i>\n            </div>\n        </div>");
-        var circle = item.querySelector('#circle');
+        item.innerHTML = `
+        <div id="box">
+            <div id='complete'>
+                <div>
+                    <input type='checkbox' id='checkbox${index}' onclick='check(${index})' ${task.completed ? 'checked' : ''} ${task.completed ? 'style="display: none"' : ''}>
+                </div>
+                <div>
+                    <p id='pending' style="${task.completed ? 'color: green;' : 'color:rgb(240, 129, 129);'}">
+                        ${task.completed ? `<i style="font-size:20px" class="fa">&#xf00c;</i>` : `<i style="font-size:24px" class="fa">&#xf017;</i>`}
+                    </p>
+                </div>
+                </div>
+                <p id='center' ${task.completed ? 'style="text-decoration: line-through;"' : ''}><strong>${task.title}</strong></p>
+                <hr>
+                <p id='content'>${task.desc}</p> 
+                <div id='circle' style="background-color: ${task.color};"></div> 
+                <div class="button">   
+                <i class="fa" id='update' onclick='edit(${index})' ${task.completed ? 'style="display: none;"' : ''}>&#xf044;</i>
+                <i class="material-icons" id='delete' onclick='remove(${index})' ${task.completed ? 'style="margin-left: 180px;"' : ''}>&#xe872;</i>
+            </div>
+        </div>`;
+        const circle = item.querySelector('#circle');
         showe.append(item);
     });
 }
 function edit(index) {
-    var task = userData[index];
+    const task = userData[index];
     updateOne.value = task.title;
     updateTwo.value = task.desc;
     addForm.style.display = 'none';
     updateForm.style.display = 'block';
-    var updateButton = document.getElementById('updateButton');
+    const updateButton = document.getElementById('updateButton');
     updateButton.onclick = function () {
         update(index);
         addForm.style.display = 'block';
@@ -60,8 +86,8 @@ function edit(index) {
     };
 }
 function update(index) {
-    var title = updateOne.value;
-    var desc = updateTwo.value;
+    const title = updateOne.value;
+    const desc = updateTwo.value;
     userData[index].title = title;
     userData[index].desc = desc;
     alert('Todo Updated Successfully');
@@ -69,8 +95,8 @@ function update(index) {
     print(userData);
 }
 function random() {
-    var random = function () { return Math.floor(Math.random() * 255); };
-    var color = "rgb(".concat(random(), ", ").concat(random(), ", ").concat(random(), ")");
+    const random = () => Math.floor(Math.random() * 255);
+    let color = `rgb(${random()}, ${random()}, ${random()})`;
     return color;
 }
 function remove(index) {
@@ -80,13 +106,12 @@ function remove(index) {
     location.reload();
 }
 function filterTodo() {
-    var filter = search.value;
-    var filteredData = userData.filter(function (ele) {
+    let filter = search.value;
+    let filteredData = userData.filter(ele => {
         return ele.title.toLowerCase().includes(filter);
     });
     print(filteredData);
 }
-
 function check(index) {
     alert('Please check again!!');
     userData[index].completed = !userData[index].completed;

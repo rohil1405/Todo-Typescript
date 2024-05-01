@@ -20,7 +20,6 @@ one.addEventListener('input', function () {
 });
 
 
-
 type uData = {
     title: string,
     desc: string,
@@ -34,6 +33,10 @@ print(userData);
 btn.addEventListener('click', function () {
     let title = one.value;
     let desc = two.value;
+
+    if(title.length == 0 && desc.length == 0) {
+        alert('Please Enter a Task')
+    } else {
 
     let obj: uData = {
         title: title,
@@ -49,6 +52,7 @@ btn.addEventListener('click', function () {
     two.style.display = 'none';
     alert('Todo added Successfully');
     print(userData);
+}
 });
 
 function print(store: uData[]) {
