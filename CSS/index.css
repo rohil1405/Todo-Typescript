@@ -195,7 +195,7 @@ header {
     margin-bottom: 2px;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 530px) {
     header {
         width: 100%;
     }
@@ -207,6 +207,10 @@ header {
 
     #show {
         width: 0;
+    }
+
+    #border {
+        margin-left: 100px;
     }
 
 }
