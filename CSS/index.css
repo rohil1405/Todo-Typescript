@@ -76,9 +76,9 @@ header {
 #search {
     border-radius: 7px;
     font-size: 16px;
-    width: 180px;
-    margin-right: 50px;
     padding: 6px;
+    width: 120px;
+    margin-right: 0px;
 }
 
 #theme {
@@ -171,4 +171,10 @@ header {
     scrollbar-width: none;
     height: 20px;
     margin-bottom: 2px;
+}
+
+@media only screen and (max-width: 460px) {
+    #box {
+        margin-left: -10px;
+    }
 }
