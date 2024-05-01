@@ -7,6 +7,26 @@
 body {
     background-image: url('../todo.jpg');
     background-size: cover;
+    background-repeat: round;
+}
+
+#wrapper {
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    scrollbar-width: none;
+}
+body {
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    scrollbar-width: none;
 }
 
 header {
@@ -173,8 +193,14 @@ header {
     margin-bottom: 2px;
 }
 
-@media only screen and (max-width: 460px) {
-    #box {
-        margin-left: -10px;
+@media only screen and (max-width: 450px) {
+    header {
+        width: 100%;
     }
+    #search {
+        width: 120px;
+        margin-right: -90px;
+    }
+
+
 }
